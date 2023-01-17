@@ -1,5 +1,9 @@
+// importing css elements from App directory
 import './App.css';
+// importing useState function to get Random Numbers
 import React, { useState } from 'react';
+// importing components
+import Profile from './Profile';
 
 const App = () => {
   const [hex, setHex] = useState('#ffffff');
@@ -12,14 +16,16 @@ const App = () => {
     <div
       className="App"
       style={{
-        backgroundColor: `${hex}`,
-        minHeight: '33.34vh',
+        backgroundColor: hex,
+        minHeight: '50.34vh',
         overflow: 'Hidden',
         zoom: 3,
       }}
     >
+      {/* component profile imported between </> */}
+      <Profile />
       <h1>{hex}</h1>
-      <button onClick={randomizedHex}> Randomized </button>
+      <button onClick={randomizedHex}> Click me </button>
     </div>
   );
 };
